@@ -12,6 +12,7 @@ per namespace to aid in investigation
 package main
 
 import (
+	"fmt"
 	"sync"
 	"sync/atomic"
 	"time"
@@ -83,6 +84,7 @@ func main() {
 
 	entry := OpLog{}
 	for iter.Next(&entry) {
+		fmt.Println(entry)
 		var m *sync.Map
 		switch entry.Operation {
 		case "i":
